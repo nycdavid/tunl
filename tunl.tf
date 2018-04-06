@@ -4,7 +4,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "intermediary" do {
-  instance_type = "t2.medium"
+  instance_type = "t2.small"
   ami = "ami-43a15f3e" # Ubuntu 16.04
   associate_public_ip_address = true
   subnet_id = "" # [TODO] this must launch into a public subnet in the same VPC
