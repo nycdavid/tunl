@@ -1,13 +1,11 @@
 provider "aws" {
-  profile = ""
   region = "us-west-2"
 }
 
-resource "aws_instance" "intermediary" do {
+resource "aws_instance" "intermediary" {
   instance_type = "t2.small"
-  ami = "ami-43a15f3e" # Amazon|Ubuntu 16.04
+  ami = "ami-4e79ed36" # Amazon|Ubuntu 16.04, also depends on the region
   associate_public_ip_address = true
-  subnet_id = ""
 
   tags {
     Name = "Tunl Intermediate {{timestamp}}"

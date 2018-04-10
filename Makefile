@@ -12,3 +12,11 @@ run:
 	-e EC2_DNS=$(EC2_DNS) \
 	-e PORT=$(PORT) \
 	nycdavid/tunl
+
+run-nginx:
+	docker run \
+	-it \
+	-p 0.0.0.0:80:80 \
+	--rm \
+	-v $(shell pwd)/conf.d:/etc/nginx/conf.d \
+	nginx:1.13.12-alpine
